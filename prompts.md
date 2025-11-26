@@ -206,30 +206,4 @@ Crea los archivos en el proyecto"
 ```
 
 **Resultado:**
-✅ Documentación completa creada:
-
-- **README.md** - Guía integral del proyecto
-- Descripción, características, instalación
-- Cómo usar la aplicación
-- Estructura del proyecto
-- Cómo ejecutar tests
-- Mejoras futuras y criterios de evaluación
-
----
-
-## Prompt 13: Desplegar a GitHub
-
-**Prompt enviado:**
-```
-"Despliega la aplicación a github"
-```
-
-**Resultado:**
-✅ Despliegue completado:
-
-- Repositorio inicializado con `git init`
-- Todos los archivos añadidos y commitidos
-- Instrucciones para conectar repositorio remoto
-- Preparado para subir a GitHub
-
----
+✅ Creado archivo README:

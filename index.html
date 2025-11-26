@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="To-Do List - Aplicación para gestionar tareas" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>To-Do List</h1>
+      <p class="subtitle">Organiza tus tareas de forma eficiente</p>
+    </header>
+
+    <main class="app-main">
+      <form id="task-form" class="task-form">
+        <input
+          id="task-input"
+          type="text"
+          class="task-input"
+          placeholder="Añade una nueva tarea..."
+          autocomplete="off"
+          required
+        />
+        <button id="add-btn" type="submit" class="btn btn-primary">Añadir</button>
+      </form>
+
+      <section class="tasks-section">
+        <ul id="task-list" class="task-list"></ul>
+        <div id="empty-state" class="empty-state">
+          <p>No hay tareas. ¡Crea la primera!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Proyecto generado con prompts • Guardado en localStorage</small>
+    </footer>
+  </div>
+
+  <script src="task.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

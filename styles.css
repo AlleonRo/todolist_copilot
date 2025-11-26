@@ -1,0 +1,354 @@
+/* ============================================
+   VARIABLES CSS
+   ============================================ */
+
+:root {
+  --primary-color: #3b82f6;
+  --primary-dark: #1e40af;
+  --primary-light: #bfdbfe;
+  --primary-pastel: #e0f2fe;
+  --success-color: #10b981;
+  --success-pastel: #d1fae5;
+  --danger-color: #ef4444;
+  --danger-light: #fee2e2;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --white: #ffffff;
+  
+  --shadow-sm: 0 1px 2px rgba(59, 130, 246, 0.08);
+  --shadow-md: 0 4px 12px rgba(59, 130, 246, 0.15);
+  --shadow-lg: 0 8px 20px rgba(30, 64, 175, 0.12);
+  --radius: 8px;
+  --transition: 150ms ease-in-out;
+}
+
+/* ============================================
+   RESET
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--primary-pastel) 0%, var(--gray-100) 100%);
+  color: var(--gray-900);
+  line-height: 1.6;
+}
+
+/* ============================================
+   APP CONTAINER
+   ============================================ */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.app-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+.app-main {
+  flex: 1;
+  padding: 2rem 1.5rem;
+}
+
+.task-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.task-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--primary-light);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  font-family: inherit;
+  background: var(--white);
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-pastel);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  margin: 0 0.25rem;
+}
+
+.btn-complete {
+  background: var(--success-pastel);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.btn-complete:hover {
+  background: var(--success-color);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-edit {
+  background: var(--primary-pastel);
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-light);
+}
+
+.btn-edit:hover {
+  background: var(--primary-light);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-delete {
+  background: var(--danger-light);
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+}
+
+.btn-delete:hover {
+  background: var(--danger-color);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   TASKS SECTION
+   ============================================ */
+
+.tasks-section {
+  width: 100%;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--white);
+  border: 1px solid var(--primary-light);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  animation: slideIn 200ms ease-out;
+  box-shadow: var(--shadow-sm);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.task-item.completed {
+  background: var(--success-pastel);
+  border-color: var(--success-color);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.task-checkbox {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: var(--success-color);
+  flex-shrink: 0;
+}
+
+.task-text {
+  flex: 1;
+  word-break: break-word;
+  transition: all var(--transition);
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--gray-500);
+  opacity: 0.7;
+}
+
+.task-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray-500);
+  font-size: 1.1rem;
+}
+
+.empty-state.hidden {
+  display: none;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.app-footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--gray-200);
+  color: var(--gray-500);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 640px) {
+  .app-container {
+    box-shadow: none;
+  }
+
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .task-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-content {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .task-controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .task-input,
+  .btn {
+    font-size: 16px;
+  }
+
+  .task-item {
+    padding: 0.75rem;
+  }
+}
